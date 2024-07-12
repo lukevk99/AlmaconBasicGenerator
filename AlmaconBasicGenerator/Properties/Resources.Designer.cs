@@ -66,5 +66,13 @@ namespace AlmaconBasicGenerator.Properties
                 resourceCulture = value;
             }
         }
-    }
+        internal static System.Drawing.Bitmap Logo_Almacon
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Logo_Almacon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        }
 }
