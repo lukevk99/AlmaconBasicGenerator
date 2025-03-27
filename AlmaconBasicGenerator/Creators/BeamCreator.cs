@@ -10,7 +10,7 @@ namespace AlmaconBasicGenerator.Creators
 {
     public class BeamCreator
     {
-        public ModelObject CreateBeam(Point startPoint, Point endPoint,int flip)
+        public ModelObject CreateBeam(Point startPoint, Point endPoint, double beamOffset)
         {
             var myBeam = new CustomPart(startPoint, endPoint)
             {
@@ -20,7 +20,7 @@ namespace AlmaconBasicGenerator.Creators
                     Rotation = Position.RotationEnum.TOP,
                     Plane = Position.PlaneEnum.MIDDLE,
                     Depth = Position.DepthEnum.MIDDLE,
-                    PlaneOffset = -102*flip,
+                    PlaneOffset = beamOffset,
                     DepthOffset = -41
                 },
             };

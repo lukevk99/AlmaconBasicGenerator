@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlmaconBasic));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabColdStuff = new System.Windows.Forms.TabPage();
+            this.txtFloorLoad = new System.Windows.Forms.TextBox();
+            this.lblFloorLoad = new System.Windows.Forms.Label();
+            this.btnSyncExcelData = new System.Windows.Forms.Button();
             this.cmbBeamProfile = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,20 +67,23 @@
             this.lblZcoordinate = new System.Windows.Forms.Label();
             this.lblYcoordinate = new System.Windows.Forms.Label();
             this.lblXcoordinate = new System.Windows.Forms.Label();
-            this.tabSystemSelection = new System.Windows.Forms.TabControl();
+            this.TabControl = new System.Windows.Forms.TabControl();
+            this.joistDistanceErrorPRovider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabColdStuff.SuspendLayout();
             this.grpBoxDirection.SuspendLayout();
             this.tabGeneral.SuspendLayout();
-            this.tabSystemSelection.SuspendLayout();
+            this.TabControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.joistDistanceErrorPRovider)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 372);
+            this.pictureBox1.Location = new System.Drawing.Point(44, 458);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(346, 147);
+            this.pictureBox1.Size = new System.Drawing.Size(461, 181);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
@@ -84,6 +91,9 @@
             // tabColdStuff
             // 
             this.tabColdStuff.BackColor = System.Drawing.SystemColors.Control;
+            this.tabColdStuff.Controls.Add(this.txtFloorLoad);
+            this.tabColdStuff.Controls.Add(this.lblFloorLoad);
+            this.tabColdStuff.Controls.Add(this.btnSyncExcelData);
             this.tabColdStuff.Controls.Add(this.cmbBeamProfile);
             this.tabColdStuff.Controls.Add(this.label2);
             this.tabColdStuff.Controls.Add(this.label3);
@@ -106,30 +116,63 @@
             this.tabColdStuff.Controls.Add(this.lblHeightCS);
             this.tabColdStuff.Controls.Add(this.lblSpansYCS);
             this.tabColdStuff.Controls.Add(this.lblSpansXCS);
-            this.tabColdStuff.Location = new System.Drawing.Point(4, 25);
+            this.tabColdStuff.Location = new System.Drawing.Point(4, 28);
+            this.tabColdStuff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabColdStuff.Name = "tabColdStuff";
-            this.tabColdStuff.Padding = new System.Windows.Forms.Padding(3);
-            this.tabColdStuff.Size = new System.Drawing.Size(381, 329);
+            this.tabColdStuff.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabColdStuff.Size = new System.Drawing.Size(511, 409);
             this.tabColdStuff.TabIndex = 1;
             this.tabColdStuff.Text = "Cold Stuff";
+            // 
+            // txtFloorLoad
+            // 
+            this.txtFloorLoad.Location = new System.Drawing.Point(233, 378);
+            this.txtFloorLoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFloorLoad.Name = "txtFloorLoad";
+            this.txtFloorLoad.ReadOnly = true;
+            this.txtFloorLoad.Size = new System.Drawing.Size(132, 22);
+            this.txtFloorLoad.TabIndex = 132;
+            // 
+            // lblFloorLoad
+            // 
+            this.lblFloorLoad.AutoSize = true;
+            this.lblFloorLoad.Location = new System.Drawing.Point(229, 357);
+            this.lblFloorLoad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFloorLoad.Name = "lblFloorLoad";
+            this.lblFloorLoad.Size = new System.Drawing.Size(68, 16);
+            this.lblFloorLoad.TabIndex = 131;
+            this.lblFloorLoad.Text = "Floor load";
+            // 
+            // btnSyncExcelData
+            // 
+            this.btnSyncExcelData.Location = new System.Drawing.Point(295, 110);
+            this.btnSyncExcelData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSyncExcelData.Name = "btnSyncExcelData";
+            this.btnSyncExcelData.Size = new System.Drawing.Size(205, 66);
+            this.btnSyncExcelData.TabIndex = 130;
+            this.btnSyncExcelData.Text = "Sync excel data";
+            this.btnSyncExcelData.UseVisualStyleBackColor = true;
+            this.btnSyncExcelData.Click += new System.EventHandler(this.btnSyncExcelData_Click_1);
             // 
             // cmbBeamProfile
             // 
             this.cmbBeamProfile.FormattingEnabled = true;
             this.cmbBeamProfile.Items.AddRange(new object[] {
             "SADEF-C+350X3.00"});
-            this.cmbBeamProfile.Location = new System.Drawing.Point(12, 197);
+            this.cmbBeamProfile.Location = new System.Drawing.Point(16, 242);
+            this.cmbBeamProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbBeamProfile.Name = "cmbBeamProfile";
-            this.cmbBeamProfile.Size = new System.Drawing.Size(159, 21);
+            this.cmbBeamProfile.Size = new System.Drawing.Size(211, 24);
             this.cmbBeamProfile.TabIndex = 129;
             this.cmbBeamProfile.Text = "SADEF-C+350X3.00";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 181);
+            this.label2.Location = new System.Drawing.Point(15, 223);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 128;
             this.label2.Text = "C-profile";
             // 
@@ -137,85 +180,97 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(10, 156);
+            this.label3.Location = new System.Drawing.Point(13, 192);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 127;
             this.label3.Text = "Beam info";
             // 
             // txtJoistDistance
             // 
-            this.txtJoistDistance.Location = new System.Drawing.Point(175, 264);
+            this.txtJoistDistance.Location = new System.Drawing.Point(233, 325);
+            this.txtJoistDistance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJoistDistance.Name = "txtJoistDistance";
-            this.txtJoistDistance.Size = new System.Drawing.Size(100, 20);
+            this.txtJoistDistance.ReadOnly = true;
+            this.txtJoistDistance.Size = new System.Drawing.Size(132, 22);
             this.txtJoistDistance.TabIndex = 122;
-            this.txtJoistDistance.Text = "875";
+            this.txtJoistDistance.TextChanged += new System.EventHandler(this.txtJoistDistance_TextChanged);
             // 
             // txtXSpan
             // 
-            this.txtXSpan.Location = new System.Drawing.Point(8, 24);
+            this.txtXSpan.Location = new System.Drawing.Point(11, 30);
+            this.txtXSpan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtXSpan.Name = "txtXSpan";
-            this.txtXSpan.Size = new System.Drawing.Size(100, 20);
+            this.txtXSpan.ReadOnly = true;
+            this.txtXSpan.Size = new System.Drawing.Size(132, 22);
             this.txtXSpan.TabIndex = 90;
-            this.txtXSpan.Text = "5000";
             // 
             // txtYSpan
             // 
-            this.txtYSpan.Location = new System.Drawing.Point(8, 63);
+            this.txtYSpan.Location = new System.Drawing.Point(11, 78);
+            this.txtYSpan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtYSpan.Name = "txtYSpan";
-            this.txtYSpan.Size = new System.Drawing.Size(100, 20);
+            this.txtYSpan.ReadOnly = true;
+            this.txtYSpan.Size = new System.Drawing.Size(132, 22);
             this.txtYSpan.TabIndex = 91;
-            this.txtYSpan.Text = "5000";
             // 
             // txtFlooring
             // 
-            this.txtFlooring.Location = new System.Drawing.Point(222, 24);
+            this.txtFlooring.Location = new System.Drawing.Point(296, 30);
+            this.txtFlooring.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFlooring.Name = "txtFlooring";
             this.txtFlooring.ReadOnly = true;
-            this.txtFlooring.Size = new System.Drawing.Size(100, 20);
+            this.txtFlooring.Size = new System.Drawing.Size(132, 22);
             this.txtFlooring.TabIndex = 95;
             this.txtFlooring.Text = "38";
             // 
             // txtHeight
             // 
-            this.txtHeight.Location = new System.Drawing.Point(222, 63);
+            this.txtHeight.Location = new System.Drawing.Point(296, 78);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(156, 20);
+            this.txtHeight.ReadOnly = true;
+            this.txtHeight.Size = new System.Drawing.Size(207, 22);
             this.txtHeight.TabIndex = 96;
-            this.txtHeight.Text = "3500";
             // 
             // txtJoistQnt
             // 
-            this.txtJoistQnt.Location = new System.Drawing.Point(116, 63);
+            this.txtJoistQnt.Location = new System.Drawing.Point(155, 78);
+            this.txtJoistQnt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtJoistQnt.Name = "txtJoistQnt";
-            this.txtJoistQnt.Size = new System.Drawing.Size(100, 20);
+            this.txtJoistQnt.Size = new System.Drawing.Size(132, 22);
             this.txtJoistQnt.TabIndex = 103;
-            this.txtJoistQnt.Text = "3";
+            this.txtJoistQnt.Text = "1";
             // 
             // txtBeamQnt
             // 
-            this.txtBeamQnt.Location = new System.Drawing.Point(116, 24);
+            this.txtBeamQnt.Location = new System.Drawing.Point(155, 30);
+            this.txtBeamQnt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBeamQnt.Name = "txtBeamQnt";
-            this.txtBeamQnt.Size = new System.Drawing.Size(100, 20);
+            this.txtBeamQnt.Size = new System.Drawing.Size(132, 22);
             this.txtBeamQnt.TabIndex = 102;
-            this.txtBeamQnt.Text = "3";
+            this.txtBeamQnt.Text = "1";
             // 
             // grpBoxDirection
             // 
             this.grpBoxDirection.Controls.Add(this.rdbYdirection);
             this.grpBoxDirection.Controls.Add(this.rdbXdirection);
-            this.grpBoxDirection.Location = new System.Drawing.Point(6, 89);
+            this.grpBoxDirection.Location = new System.Drawing.Point(8, 110);
+            this.grpBoxDirection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpBoxDirection.Name = "grpBoxDirection";
-            this.grpBoxDirection.Size = new System.Drawing.Size(129, 60);
+            this.grpBoxDirection.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpBoxDirection.Size = new System.Drawing.Size(172, 74);
             this.grpBoxDirection.TabIndex = 126;
             this.grpBoxDirection.TabStop = false;
             // 
             // rdbYdirection
             // 
             this.rdbYdirection.AutoSize = true;
-            this.rdbYdirection.Location = new System.Drawing.Point(4, 33);
+            this.rdbYdirection.Location = new System.Drawing.Point(5, 41);
+            this.rdbYdirection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbYdirection.Name = "rdbYdirection";
-            this.rdbYdirection.Size = new System.Drawing.Size(116, 17);
+            this.rdbYdirection.Size = new System.Drawing.Size(143, 20);
             this.rdbYdirection.TabIndex = 109;
             this.rdbYdirection.Text = "Beam in Y direction";
             this.rdbYdirection.UseVisualStyleBackColor = true;
@@ -224,20 +279,23 @@
             // 
             this.rdbXdirection.AutoSize = true;
             this.rdbXdirection.Checked = true;
-            this.rdbXdirection.Location = new System.Drawing.Point(4, 10);
+            this.rdbXdirection.Location = new System.Drawing.Point(5, 12);
+            this.rdbXdirection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbXdirection.Name = "rdbXdirection";
-            this.rdbXdirection.Size = new System.Drawing.Size(116, 17);
+            this.rdbXdirection.Size = new System.Drawing.Size(142, 20);
             this.rdbXdirection.TabIndex = 108;
             this.rdbXdirection.TabStop = true;
             this.rdbXdirection.Text = "Beam in X direction";
             this.rdbXdirection.UseVisualStyleBackColor = true;
+            this.rdbXdirection.CheckedChanged += new System.EventHandler(this.rdbXdirection_CheckedChanged);
             // 
             // lblJoistDistanceCS
             // 
             this.lblJoistDistanceCS.AutoSize = true;
-            this.lblJoistDistanceCS.Location = new System.Drawing.Point(172, 247);
+            this.lblJoistDistanceCS.Location = new System.Drawing.Point(229, 304);
+            this.lblJoistDistanceCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJoistDistanceCS.Name = "lblJoistDistanceCS";
-            this.lblJoistDistanceCS.Size = new System.Drawing.Size(71, 13);
+            this.lblJoistDistanceCS.Size = new System.Drawing.Size(89, 16);
             this.lblJoistDistanceCS.TabIndex = 121;
             this.lblJoistDistanceCS.Text = "Joist distance";
             // 
@@ -246,9 +304,10 @@
             this.cmbJoistProfile.FormattingEnabled = true;
             this.cmbJoistProfile.Items.AddRange(new object[] {
             "SADEF-C265X1.75"});
-            this.cmbJoistProfile.Location = new System.Drawing.Point(10, 263);
+            this.cmbJoistProfile.Location = new System.Drawing.Point(13, 324);
+            this.cmbJoistProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbJoistProfile.Name = "cmbJoistProfile";
-            this.cmbJoistProfile.Size = new System.Drawing.Size(159, 21);
+            this.cmbJoistProfile.Size = new System.Drawing.Size(211, 24);
             this.cmbJoistProfile.TabIndex = 120;
             this.cmbJoistProfile.Text = "SADEF-C265X1.75";
             this.cmbJoistProfile.SelectedIndexChanged += new System.EventHandler(this.cmbJoistProfileCS_SelectedIndexChanged);
@@ -256,9 +315,10 @@
             // lblCprofCS
             // 
             this.lblCprofCS.AutoSize = true;
-            this.lblCprofCS.Location = new System.Drawing.Point(9, 247);
+            this.lblCprofCS.Location = new System.Drawing.Point(12, 304);
+            this.lblCprofCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCprofCS.Name = "lblCprofCS";
-            this.lblCprofCS.Size = new System.Drawing.Size(45, 13);
+            this.lblCprofCS.Size = new System.Drawing.Size(57, 16);
             this.lblCprofCS.TabIndex = 119;
             this.lblCprofCS.Text = "C-profile";
             // 
@@ -266,35 +326,39 @@
             // 
             this.lblJoistTextCS.AutoSize = true;
             this.lblJoistTextCS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblJoistTextCS.Location = new System.Drawing.Point(8, 222);
+            this.lblJoistTextCS.Location = new System.Drawing.Point(11, 273);
+            this.lblJoistTextCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJoistTextCS.Name = "lblJoistTextCS";
-            this.lblJoistTextCS.Size = new System.Drawing.Size(72, 20);
+            this.lblJoistTextCS.Size = new System.Drawing.Size(89, 25);
             this.lblJoistTextCS.TabIndex = 118;
             this.lblJoistTextCS.Text = "Joist info";
             // 
             // lblXmaxCS
             // 
             this.lblXmaxCS.AutoSize = true;
-            this.lblXmaxCS.Location = new System.Drawing.Point(14, 8);
+            this.lblXmaxCS.Location = new System.Drawing.Point(19, 10);
+            this.lblXmaxCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblXmaxCS.Name = "lblXmaxCS";
-            this.lblXmaxCS.Size = new System.Drawing.Size(42, 13);
+            this.lblXmaxCS.Size = new System.Drawing.Size(50, 16);
             this.lblXmaxCS.TabIndex = 92;
             this.lblXmaxCS.Text = "Span X";
             // 
             // lblYmaxCS
             // 
             this.lblYmaxCS.AutoSize = true;
-            this.lblYmaxCS.Location = new System.Drawing.Point(14, 47);
+            this.lblYmaxCS.Location = new System.Drawing.Point(19, 58);
+            this.lblYmaxCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblYmaxCS.Name = "lblYmaxCS";
-            this.lblYmaxCS.Size = new System.Drawing.Size(42, 13);
+            this.lblYmaxCS.Size = new System.Drawing.Size(51, 16);
             this.lblYmaxCS.TabIndex = 93;
             this.lblYmaxCS.Text = "Span Y";
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(271, 294);
+            this.btnStart.Location = new System.Drawing.Point(295, 183);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(205, 66);
             this.btnStart.TabIndex = 94;
             this.btnStart.Text = "Draw";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -303,36 +367,40 @@
             // lblFlooringCS
             // 
             this.lblFlooringCS.AutoSize = true;
-            this.lblFlooringCS.Location = new System.Drawing.Point(229, 8);
+            this.lblFlooringCS.Location = new System.Drawing.Point(305, 10);
+            this.lblFlooringCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFlooringCS.Name = "lblFlooringCS";
-            this.lblFlooringCS.Size = new System.Drawing.Size(93, 13);
+            this.lblFlooringCS.Size = new System.Drawing.Size(116, 16);
             this.lblFlooringCS.TabIndex = 97;
             this.lblFlooringCS.Text = "Thickness flooring";
             // 
             // lblHeightCS
             // 
             this.lblHeightCS.AutoSize = true;
-            this.lblHeightCS.Location = new System.Drawing.Point(237, 47);
+            this.lblHeightCS.Location = new System.Drawing.Point(316, 58);
+            this.lblHeightCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHeightCS.Name = "lblHeightCS";
-            this.lblHeightCS.Size = new System.Drawing.Size(61, 13);
+            this.lblHeightCS.Size = new System.Drawing.Size(75, 16);
             this.lblHeightCS.TabIndex = 98;
             this.lblHeightCS.Text = "Height floor";
             // 
             // lblSpansYCS
             // 
             this.lblSpansYCS.AutoSize = true;
-            this.lblSpansYCS.Location = new System.Drawing.Point(122, 47);
+            this.lblSpansYCS.Location = new System.Drawing.Point(163, 58);
+            this.lblSpansYCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSpansYCS.Name = "lblSpansYCS";
-            this.lblSpansYCS.Size = new System.Drawing.Size(65, 13);
+            this.lblSpansYCS.Size = new System.Drawing.Size(80, 16);
             this.lblSpansYCS.TabIndex = 105;
             this.lblSpansYCS.Text = "No. spans Y";
             // 
             // lblSpansXCS
             // 
             this.lblSpansXCS.AutoSize = true;
-            this.lblSpansXCS.Location = new System.Drawing.Point(122, 8);
+            this.lblSpansXCS.Location = new System.Drawing.Point(163, 10);
+            this.lblSpansXCS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSpansXCS.Name = "lblSpansXCS";
-            this.lblSpansXCS.Size = new System.Drawing.Size(65, 13);
+            this.lblSpansXCS.Size = new System.Drawing.Size(79, 16);
             this.lblSpansXCS.TabIndex = 104;
             this.lblSpansXCS.Text = "No. spans X";
             // 
@@ -346,10 +414,11 @@
             this.tabGeneral.Controls.Add(this.lblZcoordinate);
             this.tabGeneral.Controls.Add(this.lblYcoordinate);
             this.tabGeneral.Controls.Add(this.lblXcoordinate);
-            this.tabGeneral.Location = new System.Drawing.Point(4, 25);
+            this.tabGeneral.Location = new System.Drawing.Point(4, 28);
+            this.tabGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabGeneral.Name = "tabGeneral";
-            this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeneral.Size = new System.Drawing.Size(381, 329);
+            this.tabGeneral.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabGeneral.Size = new System.Drawing.Size(511, 409);
             this.tabGeneral.TabIndex = 2;
             this.tabGeneral.Text = "General";
             // 
@@ -357,9 +426,10 @@
             // 
             this.btnOrigin.AutoSize = true;
             this.btnOrigin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnOrigin.Location = new System.Drawing.Point(29, 178);
+            this.btnOrigin.Location = new System.Drawing.Point(39, 219);
+            this.btnOrigin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOrigin.Name = "btnOrigin";
-            this.btnOrigin.Size = new System.Drawing.Size(158, 35);
+            this.btnOrigin.Size = new System.Drawing.Size(211, 43);
             this.btnOrigin.TabIndex = 6;
             this.btnOrigin.Text = "Pick origin point";
             this.btnOrigin.UseVisualStyleBackColor = true;
@@ -368,27 +438,30 @@
             // txtZcoordinate
             // 
             this.txtZcoordinate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtZcoordinate.Location = new System.Drawing.Point(67, 131);
+            this.txtZcoordinate.Location = new System.Drawing.Point(89, 161);
+            this.txtZcoordinate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtZcoordinate.Name = "txtZcoordinate";
-            this.txtZcoordinate.Size = new System.Drawing.Size(108, 26);
+            this.txtZcoordinate.Size = new System.Drawing.Size(143, 30);
             this.txtZcoordinate.TabIndex = 5;
             this.txtZcoordinate.Text = "0";
             // 
             // txtYcoordinate
             // 
             this.txtYcoordinate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtYcoordinate.Location = new System.Drawing.Point(67, 82);
+            this.txtYcoordinate.Location = new System.Drawing.Point(89, 101);
+            this.txtYcoordinate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtYcoordinate.Name = "txtYcoordinate";
-            this.txtYcoordinate.Size = new System.Drawing.Size(108, 26);
+            this.txtYcoordinate.Size = new System.Drawing.Size(143, 30);
             this.txtYcoordinate.TabIndex = 4;
             this.txtYcoordinate.Text = "0";
             // 
             // txtXcoordinate
             // 
             this.txtXcoordinate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtXcoordinate.Location = new System.Drawing.Point(67, 39);
+            this.txtXcoordinate.Location = new System.Drawing.Point(89, 48);
+            this.txtXcoordinate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtXcoordinate.Name = "txtXcoordinate";
-            this.txtXcoordinate.Size = new System.Drawing.Size(108, 26);
+            this.txtXcoordinate.Size = new System.Drawing.Size(143, 30);
             this.txtXcoordinate.TabIndex = 3;
             this.txtXcoordinate.Text = "0";
             // 
@@ -396,9 +469,10 @@
             // 
             this.lblZcoordinate.AutoSize = true;
             this.lblZcoordinate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblZcoordinate.Location = new System.Drawing.Point(25, 134);
+            this.lblZcoordinate.Location = new System.Drawing.Point(33, 165);
+            this.lblZcoordinate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblZcoordinate.Name = "lblZcoordinate";
-            this.lblZcoordinate.Size = new System.Drawing.Size(35, 20);
+            this.lblZcoordinate.Size = new System.Drawing.Size(45, 25);
             this.lblZcoordinate.TabIndex = 2;
             this.lblZcoordinate.Text = "Z :  ";
             // 
@@ -406,9 +480,10 @@
             // 
             this.lblYcoordinate.AutoSize = true;
             this.lblYcoordinate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblYcoordinate.Location = new System.Drawing.Point(25, 85);
+            this.lblYcoordinate.Location = new System.Drawing.Point(33, 105);
+            this.lblYcoordinate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblYcoordinate.Name = "lblYcoordinate";
-            this.lblYcoordinate.Size = new System.Drawing.Size(32, 20);
+            this.lblYcoordinate.Size = new System.Drawing.Size(41, 25);
             this.lblYcoordinate.TabIndex = 1;
             this.lblYcoordinate.Text = "Y : ";
             // 
@@ -416,32 +491,41 @@
             // 
             this.lblXcoordinate.AutoSize = true;
             this.lblXcoordinate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblXcoordinate.Location = new System.Drawing.Point(25, 42);
+            this.lblXcoordinate.Location = new System.Drawing.Point(33, 52);
+            this.lblXcoordinate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblXcoordinate.Name = "lblXcoordinate";
-            this.lblXcoordinate.Size = new System.Drawing.Size(36, 20);
+            this.lblXcoordinate.Size = new System.Drawing.Size(47, 25);
             this.lblXcoordinate.TabIndex = 0;
             this.lblXcoordinate.Text = "X :  ";
             // 
-            // tabSystemSelection
+            // TabControl
             // 
-            this.tabSystemSelection.Appearance = System.Windows.Forms.TabAppearance.Buttons;
-            this.tabSystemSelection.Controls.Add(this.tabGeneral);
-            this.tabSystemSelection.Controls.Add(this.tabColdStuff);
-            this.tabSystemSelection.Location = new System.Drawing.Point(12, 12);
-            this.tabSystemSelection.Name = "tabSystemSelection";
-            this.tabSystemSelection.SelectedIndex = 0;
-            this.tabSystemSelection.Size = new System.Drawing.Size(389, 358);
-            this.tabSystemSelection.TabIndex = 44;
+            this.TabControl.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.TabControl.Controls.Add(this.tabGeneral);
+            this.TabControl.Controls.Add(this.tabColdStuff);
+            this.TabControl.Location = new System.Drawing.Point(16, 15);
+            this.TabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedIndex = 0;
+            this.TabControl.Size = new System.Drawing.Size(519, 441);
+            this.TabControl.TabIndex = 44;
+            this.TabControl.Tag = "";
+            this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
+            // 
+            // joistDistanceErrorPRovider
+            // 
+            this.joistDistanceErrorPRovider.ContainerControl = this;
             // 
             // frmAlmaconBasic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 529);
+            this.ClientSize = new System.Drawing.Size(549, 651);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tabSystemSelection);
+            this.Controls.Add(this.TabControl);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAlmaconBasic";
-            this.Text = "Hot Stuff";
+            this.Text = "Almacon Basic Configurator";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabColdStuff.ResumeLayout(false);
             this.tabColdStuff.PerformLayout();
@@ -449,7 +533,8 @@
             this.grpBoxDirection.PerformLayout();
             this.tabGeneral.ResumeLayout(false);
             this.tabGeneral.PerformLayout();
-            this.tabSystemSelection.ResumeLayout(false);
+            this.TabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.joistDistanceErrorPRovider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,9 +571,13 @@
         private System.Windows.Forms.Label lblZcoordinate;
         private System.Windows.Forms.Label lblYcoordinate;
         private System.Windows.Forms.Label lblXcoordinate;
-        private System.Windows.Forms.TabControl tabSystemSelection;
+        private System.Windows.Forms.TabControl TabControl;
         private System.Windows.Forms.ComboBox cmbBeamProfile;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider joistDistanceErrorPRovider;
+        private System.Windows.Forms.Button btnSyncExcelData;
+        private System.Windows.Forms.TextBox txtFloorLoad;
+        private System.Windows.Forms.Label lblFloorLoad;
     }
 }

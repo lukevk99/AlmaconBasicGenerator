@@ -121,7 +121,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAu4AAAFGCAYAAAA1uhrUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAABQ
-        rgAAUK4Btp4wWgAAOkVJREFUeF7t3b+vNMl53XH9CQQcGU5oM3AgmF4CDCgzIQNCKQEFShcKFYiElRAw
+        qQAAUKkB5NqWJQAAOkVJREFUeF7t3b+vNMl53XH9CQQcGU5oM3AgmF4CDCgzIQNCKQEFShcKFYiElRAw
         BKwDAVa2gQHCibFQYChkokQRAwcOFyCYL3/tUliTWlICYZAg1udc3n5Zt+7T3VVPV8/UzHwb+OB9b011
         dU93zfTpnprpP/j0008BAAAATC4sBAAAADCXsBAAAADAXMJCAAAAAHMJCwEAAADMJSwEAAAAMJewEAAA
         AMBcwkIAAAAAcwkLAQAAAMwlLAQAAAAwl7AQAAAAwFzCQgAAAABzCQsBAAAAzCUsBAAAADCXsBAAAADA
@@ -373,4 +373,10 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="tabColdStuff.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="joistDistanceErrorPRovider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
