@@ -33,7 +33,7 @@ namespace AlmaconBasicGenerator
             txtXcoordinate.Text = originPoint.X.ToString();
             txtYcoordinate.Text = originPoint.Y.ToString();
             txtZcoordinate.Text = originPoint.Z.ToString();
-            //Determination of offset by picker class
+            //Determination of offset by picker classssss
         }
         public void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
